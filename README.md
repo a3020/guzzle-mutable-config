@@ -9,3 +9,18 @@ to change the base_uri instead of creating hundreds of instances. This is a copy
 
 - `setConfig(array $array)`
 - `setConfigOption(string $key, $value)`
+
+## Installation
+
+`composer require "a3020/guzzle-mutable-config"`
+
+
+## Usage
+
+```php
+$client = new A3020\GuzzleHttp\Client([
+    'base_uri' => 'foo',
+]);
+$client->setConfigOption('base_uri', 'http://localhost');
+$response = $client->get('file.htm');
+```
