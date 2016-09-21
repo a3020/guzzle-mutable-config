@@ -156,10 +156,6 @@ class Client implements ClientInterface
 
     public function setConfigOption(string $key, $value)
     {
-        if ($key == 'handler') {
-            $value = HandlerStack::create();
-        }
-
         // Convert the base_uri to a UriInterface
         if ($key == 'base_uri') {
             $value = Psr7\uri_for($value);
