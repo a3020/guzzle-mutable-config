@@ -142,10 +142,6 @@ class Client implements ClientInterface
 
     public function setConfig(array $config)
     {
-        if (!isset($config['handler'])) {
-            $config['handler'] = HandlerStack::create();
-        }
-
         // Convert the base_uri to a UriInterface
         if (isset($config['base_uri'])) {
             $config['base_uri'] = Psr7\uri_for($config['base_uri']);
