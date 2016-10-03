@@ -147,7 +147,7 @@ class Client implements ClientInterface
             $config['base_uri'] = Psr7\uri_for($config['base_uri']);
         }
 
-        $this->config = $config;
+        $this->configureDefaults($config);
     }
 
     public function setConfigOption(string $key, $value)
